@@ -27,26 +27,13 @@ a:hover {
 .site-wrapper {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  padding: 1.25rem 1.5rem 4rem;
 }
 
 /* Header */
 .site-header {
   text-align: center;
-  margin-bottom: 4.5rem;
-}
-
-.site-title {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin: 0 0 1.25rem;
-  line-height: 1.2;
-}
-
-.site-title a:hover {
-  text-decoration: none;
+  margin-bottom: 1.25rem;
 }
 
 .site-nav {
@@ -86,6 +73,53 @@ a:hover {
 }
 
 /* Home tab */
+.home-hero {
+  width: 100vw;
+  min-height: 320px;
+  margin-left: calc(50% - 50vw);
+  margin-bottom: 3rem;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+    url("../Background_photo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero__overlay {
+  width: min(100%, 900px);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.home-hero__title {
+  margin: 0;
+  font-size: clamp(2.1rem, 6vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.home-hero__eyebrow,
+.home-hero__subtitle {
+  margin: 0.65rem 0 0;
+  font-size: clamp(1rem, 2.3vw, 1.4rem);
+  line-height: 1.35;
+}
+
+.home-hero__eyebrow {
+  font-weight: 600;
+}
+
+.home-hero__subtitle {
+  font-weight: 500;
+}
+
 .home-content {
   display: grid;
   grid-template-columns: minmax(200px, 280px) 1fr;
@@ -95,6 +129,15 @@ a:hover {
 }
 
 @media (max-width: 640px) {
+  .home-hero {
+    min-height: 250px;
+    margin-bottom: 2.25rem;
+  }
+
+  .home-hero__overlay {
+    padding: 2rem 1rem;
+  }
+
   .home-content {
     grid-template-columns: 1fr;
     justify-items: center;
