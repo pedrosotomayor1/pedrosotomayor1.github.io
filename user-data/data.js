@@ -1,15 +1,8 @@
 export const bio = [
-  "I am a second year <strong>Ph.D. Student in the Department of Mechanical and Aerospace Engineering</strong> at the University of California, San Diego, \
-  working under the supervision of <a href='https://kramer.ucsd.edu/index.html' target='_blank'>Prof. Boris Kramer</a>.",
-  "My current research interests are in optimization algorithms in the field of model order reductions for complex models such as Partial \
-  Differential Equations. Specifically, I am currently working on algorithms that recast PDEs into an specific form, namely quadratization and \
-  polynomialization for PDEs, from symbolical models and from data.",
-  "In 2024 I obtained both my B.Sc. in Computer Science Engineering and my M.Sc. in Computer Science \
+  "I am a Research Fellow (Pre-Doc) at Stanford University (GSB). \
+  My primary fields are Mechanism and Market Design, with a strong interest in AI & Data Markets, Public Economics and Market Finance.",
+  "In 2024 I obtained a B.Sc. in Engineering and in 2026 a M.Sc. in Economics both \
   from <a href='https://uchile.cl/' target='_blank'>Universidad de Chile</a>.",
-  
-  // "I come from city called Coro, close to the coast in Venezuela. Thanks to my family's support, I was able to persue a carreer "
-  // Talk about my internship in France
-  // Talk about how passionate I am about teaching
 ];
 
 // News: date and details only (e.g. paper accepted, award, etc.)
