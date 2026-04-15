@@ -17,7 +17,7 @@ export const events = [
 export const publications = [
   {
     category: "Working Papers",
-    authors: ["Escobar Juan F.", "Sotomayor Pedro A."],
+    authors: ["Juan F. Escobar", "Pedro A. Sotomayor"],
     year: "2026",
     title: "Resource allocation with privately known externalities",
     status: "Working Paper",
@@ -28,7 +28,7 @@ export const publications = [
   },
   {
     category: "Working Papers",
-    authors: ["Raffinot Thomas", "Sotomayor Pedro A."],
+    authors: ["Thomas Raffinot", "Pedro A. Sotomayor"],
     year: "2026",
     title: "A Regime Macro-Based Asset Allocation with an Interpretable ML Model",
     status: "Work in Progress",
