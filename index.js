@@ -4,7 +4,6 @@ import {
   events,
   publications,
   teaching,
-  software,
 } from "./user-data/data.js";
 
 function populateBio(items, id) {
@@ -272,7 +271,7 @@ function openCitationModal(citation) {
     const bibtex =
       citation.bibtex && String(citation.bibtex).trim().length
         ? citation.bibtex
-        : "@software{your_citation_key,\n  title = {TODO},\n  author = {TODO},\n  year = {TODO}\n}";
+        : "@misc{your_citation_key,\n  title = {TODO},\n  author = {TODO},\n  year = {TODO}\n}";
     copyTextToClipboard(bibtex)
       .then(() => showCopyNotification("BibTeX entry copied to clipboard"))
       .catch(() => showCopyNotification("Could not copy BibTeX"));
@@ -291,85 +290,24 @@ function closeCitationModal() {
   modal.setAttribute("aria-hidden", "true");
 }
 
-function populateSoftwareSection(items) {
-  const container = document.getElementById("software-list");
-  if (!container) return;
-
+function setupCitationModalHandlers() {
   const modal = document.getElementById("citation-modal");
   const closeBtn = document.querySelector(".citation-modal__close");
   if (modal) {
-    modal.addEventListener("click", (e) => { if (e.target === modal) closeCitationModal(); });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeCitationModal();
+    });
   }
   if (closeBtn) closeBtn.addEventListener("click", closeCitationModal);
-  (items || []).forEach((item) => {
-    const { title, version, repo, doi, description, citation } = item;
-    if (!title && !description) return;
-    const entry = document.createElement("article");
-    entry.className = "software-entry";
-    if (title) {
-      const titleEl = document.createElement("p");
-      titleEl.className = "software-entry__title";
-      titleEl.textContent = title;
-      entry.appendChild(titleEl);
-    }
-    if (version) {
-      const subtitleEl = document.createElement("p");
-      subtitleEl.className = "software-entry__subtitle";
-      subtitleEl.textContent = version;
-      entry.appendChild(subtitleEl);
-    }
-    if (repo || doi || (citation && (citation.heading || (citation.refs && citation.refs.length)))) {
-      const ul = document.createElement("ul");
-      ul.className = "software-entry__links";
-      if (repo) {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = repo;
-        a.target = "_blank";
-        a.rel = "noopener";
-        a.textContent = "Repository";
-        li.appendChild(a);
-        ul.appendChild(li);
-      }
-      if (doi) {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = doi.startsWith("http") ? doi : `https://doi.org/${doi}`;
-        a.target = "_blank";
-        a.rel = "noopener";
-        a.textContent = "DOI";
-        li.appendChild(a);
-        ul.appendChild(li);
-      }
-      if (citation && (citation.heading || (citation.refs && citation.refs.length))) {
-        const li = document.createElement("li");
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "software-entry__citation-btn";
-        btn.textContent = "Citation";
-        btn.addEventListener("click", () => openCitationModal(citation));
-        li.appendChild(btn);
-        ul.appendChild(li);
-      }
-      entry.appendChild(ul);
-    }
-    if (description) {
-      const descEl = document.createElement("p");
-      descEl.className = "software-entry__description";
-      descEl.innerHTML = description;
-      entry.appendChild(descEl);
-    }
-    container.appendChild(entry);
-  });
 }
 
 // Populate all tabs
+setupCitationModalHandlers();
 populateBio(bio, "home-bio");
 populatePublicationsSection(publications);
 populateNewsSection(news);
 populateEventsSection(events);
 populateTeachingSection(teaching);
-populateSoftwareSection(software);
 
 // Tab switching
 document.querySelectorAll("[data-tab]").forEach((el) => {
