@@ -104,9 +104,11 @@ a:hover {
 
 .profile-img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1;
   display: block;
   object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 
 .home-text-col {
