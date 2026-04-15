@@ -15,7 +15,7 @@ export const news = [
   },
   {
     date: "September-December 2025",
-    details: "I really enyojed being the teaching assistant for the <em>Linear Systems Theory</em> (MAE 280A) course at UC San Diego. In this PhD level course, the students learned about linear algebra core concepts, and properties of linear dynamical systems.",
+    details: "I really enjoyed being the teaching assistant for the <em>Linear Systems Theory</em> (MAE 280A) course at UC San Diego. In this PhD level course, the students learned about linear algebra core concepts, and properties of linear dynamical systems.",
   },
   {
     date: "October 2025",
