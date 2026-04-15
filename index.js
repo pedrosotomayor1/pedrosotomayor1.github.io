@@ -28,10 +28,10 @@ function renderPublicationEntries(container, items) {
     authorsEl.className = "pub-entry__authors";
     if (authors && authors.length) {
       const span = document.createElement("span");
-      span.innerHTML =
+      span.textContent =
         authors.length === 1
-          ? `<strong>${authors[0]}</strong> (${year}).`
-          : `<strong>${authors[0]}</strong>, ${authors.slice(1).join(", ")} (${year}).`;
+          ? `${authors[0]} (${year}).`
+          : `${authors.join(", ")} (${year}).`;
       authorsEl.appendChild(span);
     } else if (year) {
       authorsEl.textContent = `(${year}).`;
