@@ -1,8 +1,7 @@
 export const bio = [
   "I am a Research Fellow (Pre-Doc) at Stanford University (GSB). \
   My primary fields are Mechanism and Market Design, with a strong interest in AI & Data Markets, Public Economics and Market Finance.",
-  "In 2024 I obtained a B.Sc. in Engineering and in 2026 a M.Sc. in Economics both \
-  from <a href='https://uchile.cl/' target='_blank'>Universidad de Chile</a>.",
+  "I obtained a M.Sc. in Applied Economics from <a href='https://uchile.cl/' target='_blank'>Universidad de Chile</a>, and a B.Sc. in Engineering from <a href='https://uchile.cl/' target='_blank'>Universidad de Chile</a> together with a M.Sc. in Engineering from <a href='https://www.centralesupelec.fr/' target='_blank'>CentraleSupelec, Universite Paris-Saclay</a>.",
 ];
 
 // News: date and details only (e.g. paper accepted, award, etc.)
@@ -23,7 +22,7 @@ export const publications = [
     title: "Resource allocation with privately known externalities",
     status: "Working Paper",
     description:
-      "We study how to allocate scarce resources such as GPU compute when both private gains and social externalities are privately known. The paper characterizes the welfare-maximizing mechanism, shows why first-best is unattainable, and proves that an optimal price-based rule acts as a generalized Pigouvian subsidy.",
+      "We study how to allocate scarce resources such as GPU computing power when both private values and social externalities are privately known. The paper characterizes the welfare-maximizing mechanism, shows why first-best is unattainable, and proves that an optimal price-based rule acts as a generalized Pigouvian subsidy. We show that the optimal design necessitates a participation distortion where low social-value agents are allowed to acquire the resource. ",
     links: [],
     tags: ["Mechanism design", "Externalities", "Allocation Mechanisms"],
   },
@@ -34,7 +33,7 @@ export const publications = [
     title: "A Regime Macro-Based Asset Allocation with an Interpretable ML Model",
     status: "Work in Progress",
     description:
-      "This paper develops a framework for Regime macro-based investment and GDP-targeting decisions using an interpretable machine learning model called the Fast Rule-Fit Regime Detection Algorithm. We show that strategies guided by the detected macroeconomic regimes deliver statistically significant improvements in risk-adjusted returns relative to buy-and-hold.",
+      "This paper develops a framework for Regime macro-based investment and GDP-targeting decisions using an interpretable machine learning model 'Fast Rule-Fit Algorithm' developed by us. We show that strategies guided by the detected macroeconomic regimes deliver statistically significant improvements in risk-adjusted returns relative to buy-and-hold.",
     links: [],
     tags: ["Macroeconomics", "Market Finance", "Interpretable Machine Learning", "Asset Allocation"],
   },
