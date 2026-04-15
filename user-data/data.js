@@ -14,25 +14,57 @@ export const events = [
 ];
 
 
-// Publications: category, authors, year, title, status, links, tags. Optional citation: { heading, refs, bibtex }.
+// Publications: category, authors, year, title, status, description, links, tags. Optional citation: { heading, refs, bibtex }.
 export const publications = [
   {
-    category: "preprints",
-    authors: ["Sotomayor P.", "Escobar J. F."],
+    category: "Working Papers",
+    authors: ["Escobar Juan F.", "Sotomayor Pedro A."],
     year: "2026",
     title: "Resource allocation with privately known externalities",
-    status: "working paper",
+    status: "Working Paper",
+    description:
+      "We study how to allocate scarce resources such as GPU compute when both private gains and social externalities are privately known. The paper characterizes the welfare-maximizing mechanism, shows why first-best is unattainable, and proves that an optimal price-based rule acts as a generalized Pigouvian subsidy.",
     links: [],
     tags: ["Mechanism design", "Externalities", "Allocation Mechanisms"],
   },
   {
-    category: "preprints",
-    authors: ["Sotomayor P.", "Raffinot T."],
+    category: "Working Papers",
+    authors: ["Raffinot Thomas", "Sotomayor Pedro A."],
     year: "2026",
     title: "A Regime Macro-Based Asset Allocation with an Interpretable ML Model",
-    status: "work in progress",
+    status: "Work in Progress",
+    description:
+      "This paper develops a framework for Regime macro-based investment and GDP-targeting decisions using an interpretable machine learning model called the Fast Rule-Fit Regime Detection Algorithm. We show that strategies guided by the detected macroeconomic regimes deliver statistically significant improvements in risk-adjusted returns relative to buy-and-hold.",
     links: [],
     tags: ["Macroeconomics", "Market Finance", "Interpretable Machine Learning", "Asset Allocation"],
+  },
+];
+
+// Research experience: institution, date, title, and bullet points.
+export const researchExperience = [
+  {
+    institution: "Stanford University (GSB)",
+    date: "Jul. 2025 - Present",
+    title: "Research Fellow (Pre-Doc)",
+    details: [
+      "Faculty Mentor: Professor Claudia Allende Santa Cruz.",
+    ],
+  },
+  {
+    institution: "Universidad de Chile (MIPP)",
+    date: "Aug. 2024 - Present",
+    title: "Research Assistant",
+    details: [
+      "Research Assistant to Professor Juan Escobar (Mechanism Design, Game Theory).",
+      "Research Assistant to Professor Alejandro Corvalan (Political Economy).",
+      "Research Assistant to Professor Marcela Valenzuela (Financial Economics).",
+    ],
+  },
+  {
+    institution: "MICS LAB, Universite Paris-Saclay",
+    date: "Oct. 2020 - Jul. 2022",
+    title: "Research Project on Microstructure of Financial Markets",
+    details: [],
   },
 ];
 

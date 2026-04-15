@@ -3,6 +3,7 @@ import {
   news,
   events,
   publications,
+  researchExperience,
   teaching,
 } from "./user-data/data.js";
 
@@ -19,7 +20,7 @@ function populateBio(items, id) {
 function renderPublicationEntries(container, items) {
   if (!container || !items.length) return;
   items.forEach((item) => {
-    const { authors, year, title, status, links, tags, citation } = item;
+    const { authors, year, title, status, description, links, tags, citation } = item;
     const entry = document.createElement("article");
     entry.className = "pub-entry";
 
@@ -50,6 +51,13 @@ function renderPublicationEntries(container, items) {
       titleWrap.appendChild(statusSpan);
     }
     entry.appendChild(titleWrap);
+
+    if (description) {
+      const descriptionEl = document.createElement("p");
+      descriptionEl.className = "pub-entry__description";
+      descriptionEl.textContent = description;
+      entry.appendChild(descriptionEl);
+    }
 
     const hasCitation = citation && (citation.heading || (citation.refs && citation.refs.length));
     if ((links && links.length) || hasCitation) {
@@ -92,14 +100,66 @@ function renderPublicationEntries(container, items) {
 }
 
 function populatePublicationsSection(allItems) {
-  const preprints = (allItems || []).filter((p) => p.category === "preprints");
+  const workingPapers = (allItems || []).filter((p) => p.category === "Working Papers");
   const thesis = (allItems || []).filter((p) => p.category === "thesis");
-  const preprintsSection = document.getElementById("research-preprints-section");
+  const workingPapersSection = document.getElementById("research-working-papers-section");
   const thesisSection = document.getElementById("research-thesis-section");
-  if (preprintsSection) preprintsSection.style.display = preprints.length ? "" : "none";
+  if (workingPapersSection) workingPapersSection.style.display = workingPapers.length ? "" : "none";
   if (thesisSection) thesisSection.style.display = thesis.length ? "" : "none";
-  renderPublicationEntries(document.getElementById("publications-preprints"), preprints);
+  renderPublicationEntries(document.getElementById("publications-working-papers"), workingPapers);
   renderPublicationEntries(document.getElementById("publications-thesis"), thesis);
+}
+
+function populateResearchExperienceSection(items) {
+  const container = document.getElementById("research-experience-list");
+  const section = document.getElementById("research-experience-section");
+  if (!container || !section) return;
+
+  if (!items || !items.length) {
+    section.style.display = "none";
+    return;
+  }
+
+  section.style.display = "";
+  items.forEach((item) => {
+    const { institution, date, title, details } = item;
+    const entry = document.createElement("article");
+    entry.className = "research-experience-entry";
+
+    if (institution) {
+      const institutionEl = document.createElement("p");
+      institutionEl.className = "research-experience-entry__institution";
+      institutionEl.textContent = institution;
+      entry.appendChild(institutionEl);
+    }
+
+    if (date) {
+      const dateEl = document.createElement("p");
+      dateEl.className = "research-experience-entry__date";
+      dateEl.textContent = date;
+      entry.appendChild(dateEl);
+    }
+
+    if (title) {
+      const titleEl = document.createElement("p");
+      titleEl.className = "research-experience-entry__title";
+      titleEl.textContent = title;
+      entry.appendChild(titleEl);
+    }
+
+    if (details && details.length) {
+      const detailsList = document.createElement("ul");
+      detailsList.className = "research-experience-entry__details";
+      details.forEach((detail) => {
+        const detailEl = document.createElement("li");
+        detailEl.textContent = detail;
+        detailsList.appendChild(detailEl);
+      });
+      entry.appendChild(detailsList);
+    }
+
+    container.appendChild(entry);
+  });
 }
 
 function populateNewsSection(items) {
@@ -305,6 +365,7 @@ function setupCitationModalHandlers() {
 setupCitationModalHandlers();
 populateBio(bio, "home-bio");
 populatePublicationsSection(publications);
+populateResearchExperienceSection(researchExperience);
 populateNewsSection(news);
 populateEventsSection(events);
 populateTeachingSection(teaching);
