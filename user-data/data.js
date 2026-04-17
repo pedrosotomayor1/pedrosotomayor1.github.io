@@ -2,6 +2,7 @@ export const bio = [
   "I am a Research Fellow (Pre-Doc) at Stanford University (GSB). \
   My primary fields are Mechanism and Market Design, with a strong interest in AI & Data Markets, Public Economics and Market Finance.",
   "I obtained a M.Sc. in Applied Economics from <a href='https://uchile.cl/' target='_blank'>Universidad de Chile</a>, and a B.Sc. in Engineering from <a href='https://uchile.cl/' target='_blank'>Universidad de Chile</a> together with a M.Sc. in Engineering from <a href='https://www.centralesupelec.fr/' target='_blank'>CentraleSupelec, Universite Paris-Saclay</a>.",
+  "You can contact me at psotomayor@stanford.edu.",
 ];
 
 // News: date and details only (e.g. paper accepted, award, etc.)
