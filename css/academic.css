@@ -122,7 +122,7 @@ a:hover {
 
 .home-content {
   display: grid;
-  grid-template-columns: minmax(200px, 280px) 1fr;
+  grid-template-columns: minmax(180px, 240px) minmax(320px, 1fr);
   gap: 2.5rem;
   align-items: start;
   margin-bottom: 2.5rem;
