@@ -150,7 +150,7 @@ a:hover {
   aspect-ratio: 1 / 1;
   display: block;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 15%;
   border-radius: 50%;
 }
 
